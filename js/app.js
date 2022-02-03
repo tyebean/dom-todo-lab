@@ -10,10 +10,6 @@ let clearBtn = document.getElementById('clear-button')
 //console.log(clearBtn) 
 
 
-list.addEventListener('click', function(evt){
-  console.log('ayoo') 
-})
-
 //pesudocode for: delete click
 //grab the indiv list item
 //delete the item that is being clicked on 
@@ -25,14 +21,15 @@ btn.addEventListener('click', function(evt){
   if (inpt.value !== ""){
     document.querySelector('ul').appendChild(newLi)
   inpt.value = ""
-
+  }
   clearBtn.addEventListener('click', function(evt){
     document.getElementById('todo-list').removeChild(newLi)
     inpt.value = "" 
   })
-  }
+  list.addEventListener('click', function(evt){
+  evt.target.remove('newLi')
+  })
 })
-
 
 
 
